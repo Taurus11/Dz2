@@ -22,7 +22,6 @@
       }
       echo'</tr>';
   }
-
   table($first, $second);
 
 ?>

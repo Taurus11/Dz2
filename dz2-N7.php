@@ -14,11 +14,16 @@
       $new_str[] = $str[$i];
       $i--;
     }
-
-    if ($str === $new_str) {
-      print_r($new_str);
+    $result = implode('', $new_str);
+    if ($str === $result) {
+      return true;
+    } else {
+      return false;
     }
   }
 
-  strvali($str);
+  if(strvali($str)){
+    echo 'good';
+  }
+
 ?>
