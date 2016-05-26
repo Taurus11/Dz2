@@ -1,29 +1,37 @@
 <?php
-  //Ñîçäàòü 3 ôóíêöèè, ïðèíèìàþùèå ïî 1 ñòðîêîâîìó ïàðàìåòðó, âûâîäÿùèå íà ýêðàí ñòðîêó ñ ýòèì ïàðàìåòðîì
-  //Ñîçäàòü 4þ, êîòîðàÿ áóäåò ïðèíèìàòü öåëîå ÷èñëî è ñòðîêó,
-  function zero ($str) {
-    $str = 'Alex';
-    echo ("Hello, $str");
+//Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ 3 Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸, Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÑŽÑ‰Ð¸Ðµ Ð¿Ð¾ 1 ÑÑ‚Ñ€Ð¾ÐºÐ¾Ð²Ð¾Ð¼Ñƒ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñƒ, Ð²Ñ‹Ð²Ð¾Ð´ÑÑ‰Ð¸Ðµ Ð½Ð° ÑÐºÑ€Ð°Ð½ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ñ ÑÑ‚Ð¸Ð¼ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð¼
+//Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ 4ÑŽ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð±ÑƒÐ´ÐµÑ‚ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°Ñ‚ÑŒ Ñ†ÐµÐ»Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¸ ÑÑ‚Ñ€Ð¾ÐºÑƒ, Ð¸ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð¿ÐµÑ€ÐµÐ´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð°
+//Ð´Ð¾Ð»Ð¶Ð½Ð° Ð²Ñ‹Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð¾Ð´Ð½Ñƒ Ð¸Ð· Ñ‚Ñ€Ñ‘Ñ… Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ ÑÐ¾ ÑÑ‚Ñ€Ð¾ÐºÐ¾Ð²Ñ‹Ð¼ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð¼
+//Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾:
+  function one ($str) {
+    echo ("Hello of zero function, $str");
   }
-  zero($str);
 
   echo('<br>');
 
-  function one ($str1) {
-    $str1 = 'Dmitry';
-    echo ("Hello, $str1");
+  function two ($str) {
+    echo ("Hello of first function $str");
   }
-  one($str1);
 
   echo('<br>');
 
-  function two ($str2) {
-    $str2 = 'Konstantin';
-    echo ("Hello, $str2");
+  function three ($str) {
+    echo ("Hello of second function $str");
   }
-  two($str2);
 
-  function three ($num, $str3) {
+  function call ($num, $str) {
+    $count = count($num);
+    $numfunc = [mt_rand(1, $count)];
 
+    switch ($numfunc) {
+      case 1: one($str);
+        break;
+      case 2: two($str);
+        break;
+      case 3: three($str);
+        break;
+    }
   }
+
+  call(1, 'elvis');
 ?>

@@ -1,24 +1,23 @@
 <?php
-  //Ôóíêöèÿ äîëæíà ïðèíèìàòü ìàññèâ ñòðîê è âûâîäèòü êàæäóþ ñòðîêó â îòäåëüíîì ïàðàãðàôå
-  //Äîïîëíèòåëüíî: ïðè âûâîäå êàæäóþ ñòðîêó âûâîäèòü âíóòðè ïàðàãðàôà ñëó÷àéíîå ÷èñëî ðàç
+//Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°Ñ‚ÑŒ Ð¼Ð°ÑÑÐ¸Ð² ÑÑ‚Ñ€Ð¾Ðº Ð¸ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ ÐºÐ°Ð¶Ð´ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð² Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾Ð¼ Ð¿Ð°Ñ€Ð°Ð³Ñ€Ð°Ñ„Ðµ
+//Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾: Ð¿Ñ€Ð¸ Ð²Ñ‹Ð²Ð¾Ð´Ðµ ÐºÐ°Ð¶Ð´ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ð²Ð½ÑƒÑ‚Ñ€Ð¸ Ð¿Ð°Ñ€Ð°Ð³Ñ€Ð°Ñ„Ð° ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ñ€Ð°Ð·
 
-  $str_arr = array('Hello world', 'I love live', 'Be happy');
+  $arr = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
 
-  function p_generator ($str_arr) {
+  function p_generator ($arr) {
 
-    for ($i = 0; $i <= rand(0, 5); $i++){
-      echo '<p>' . $str_arr[0] . '</p>';
-    }
+    $arr_words = explode(' ', $arr);
+    foreach ($arr_words as $arr_word) {
 
-    for ($i = 0; $i <= rand(0, 5); $i++) {
-      echo '<p>' . $str_arr[1] . '</p>';
-    }
-
-    for ($i = 0; $i <= rand(0, 5); $i++) {
-      echo '<p>'. $str_arr[2] . '</p>';
+      $random = rand(2, 5);
+      echo '<p>';
+      for ($i = 1; $i < $random; $i++){
+        echo "$arr_word".'<br>';
+      }
+      echo '</p>';
     }
   }
 
-  p_generator($str_arr);
+  p_generator($arr);
 
 ?>
