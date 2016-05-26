@@ -21,7 +21,7 @@
 
   function call ($num, $str) {
     $count = count($num);
-    $numfunc = [mt_rand(1, $count)];
+    $numfunc = mt_rand(1, $count);
 
     switch ($numfunc) {
       case 1: one($str);
@@ -31,6 +31,7 @@
       case 3: three($str);
         break;
     }
+    return $str;
   }
 
   call(1, 'elvis');
